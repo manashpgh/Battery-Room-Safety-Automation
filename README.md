@@ -138,11 +138,17 @@ Modular code structure for easy debugging and testing
 Source code is available in the /Code folder.
 
 📁 Repository Structure
+
 ├── CAD/            → Mechanical design and linkage drawings
+
 ├── Calibration/    → Sensor calibration graphs & filtering analysis
+
 ├── Code/           → Arduino source code
+
 ├── Hardware/       → Circuit diagrams & system architecture
+
 ├── Images/         → Prototype and experimental setup photos
+
 └── README.md
 
 🧪 Prototype & Validation
@@ -197,7 +203,7 @@ Manash Pratim Ghosh
 
 M.Tech — Mechatronics 
 
-GitHub: [your GitHub profile link]
+GitHub: (https://github.com/manashpgh)
 
 📄 License
 
