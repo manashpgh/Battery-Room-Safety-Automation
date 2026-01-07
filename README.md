@@ -167,6 +167,7 @@ Images of the prototype are available in the `/Images` folder.
 ## 👤 Author
 
 **Manash Pratim Ghosh**
+
 GitHub: *(https://github.com/manashpgh)*
 
 ---
@@ -174,13 +175,6 @@ GitHub: *(https://github.com/manashpgh)*
 ## 📄 License
 
 This project is licensed under the MIT License.
-Add detailed project README
-```
 
-If you want, next I can:
 
-* Review your **final repo live**
-* Help you **explain this project perfectly in interviews**
-* Rewrite this README into a **one-page technical brief** for resume attachments
 
-Just tell me 👍
