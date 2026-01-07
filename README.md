@@ -117,10 +117,10 @@ Source code is available in the `/Code` folder.
 ## 📁 Repository Structure
 
 ```
-├── Code/           → Arduino source code
 ├── CAD/            → Mechanical design and linkage drawings
-├── Hardware/       → Circuit diagrams & system architecture
 ├── Calibration/    → Sensor calibration graphs & filtering analysis
+├── Code/           → Arduino source code
+├── Hardware/       → Circuit diagrams & system architecture
 ├── Images/         → Prototype and experimental setup photos
 └── README.md
 ```
