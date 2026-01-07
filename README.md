@@ -1,210 +1,186 @@
-Smart Battery Room Exhaust & Ventilation System
+# Smart Battery Room Exhaust & Ventilation System
 
+**Embedded Systems | Mechatronics | Control & Automation Project**
 
-Embedded Systems | Mechatronics | Control & Automation Project
+---
 
+## 📌 Project Overview
 
-Project Overview
+Battery rooms in industrial facilities are prone to **hydrogen gas accumulation, overheating, and humidity rise**, which can lead to **fire hazards, battery degradation, and safety risks**.
+This project presents a **smart automated exhaust and ventilation system** that continuously monitors environmental parameters and **autonomously controls ventilation, cooling, and vent opening mechanisms**.
 
+The system integrates **sensors, embedded control, mechanical linkage design, and calibration-driven signal conditioning** to create a reliable safety automation solution.
 
-Battery rooms in industrial facilities are prone to hydrogen gas accumulation, overheating, and humidity rise, which can lead to fire hazards, battery degradation, and safety risks.
+---
 
-This project presents a smart automated exhaust and ventilation system that continuously monitors environmental parameters and autonomously controls ventilation, cooling, and vent opening mechanisms.
+## 🎯 Objectives
 
-The system integrates sensors, embedded control, mechanical linkage design, and calibration-driven signal conditioning to create a reliable safety automation solution.
+* Detect hazardous **gas/smoke buildup** in battery rooms
+* Monitor **temperature and humidity** continuously
+* Automatically **open ventilation vents** using a mechanical linkage
+* Activate **forced exhaust and cooling** under unsafe conditions
+* Demonstrate **sensor calibration, noise filtering, and system integration**
 
+---
 
-🎯 Objectives
-
-
-Detect hazardous gas/smoke buildup in battery rooms
-
-Monitor temperature and humidity continuously
-
-Automatically open ventilation vents using a mechanical linkage
-
-Activate forced exhaust and cooling under unsafe conditions
-
-Demonstrate sensor calibration, noise filtering, and system integration
-
-
-⚙️ System Architecture
-
+## ⚙️ System Architecture
 
 The system consists of three major layers:
 
-Sensing Layer:
+1. **Sensing Layer**
 
-MQ-2 Gas Sensor (smoke / hydrogen detection)
+   * MQ-2 Gas Sensor (smoke / hydrogen detection)
+   * DHT11 Humidity Sensor
+   * Copper–Iron Thermocouple (temperature sensing)
 
-DHT11 Humidity Sensor
+2. **Control Layer**
 
-Copper–Iron Thermocouple (temperature sensing)
+   * Arduino-based decision logic
+   * Threshold-based safety control
+   * Servo and actuator control
 
-Control Layer:
+3. **Actuation Layer**
 
-Arduino-based decision logic
+   * 4-bar linkage mechanism for vent opening
+   * 12V DC exhaust fan
+   * Peltier module for localized cooling
 
-Threshold-based safety control
+---
 
-Servo and actuator control
+## 🔧 Hardware Components
 
-Actuation Layer:
+* Arduino (microcontroller)
+* MQ-2 Gas Sensor
+* DHT11 Temperature & Humidity Sensor
+* Homemade Cu–Fe Thermocouple
+* SG90 Servo Motor
+* 12V DC Exhaust Fan
+* Peltier Cooling Module (TEC-based) with heat sink and forced-air cooling fan
+* 4-Bar Linkage (acrylic-based mechanical design)
+* Power supply & signal conditioning components
 
-4-bar linkage mechanism for vent opening
+---
 
-12V DC exhaust fan
+## 🧠 Working Principle
 
-Peltier Cooling Module (TEC-based) with heat sink and forced-air cooling fan
+1. Sensors continuously monitor **gas concentration, temperature, and humidity**.
+2. Sensor signals are processed by the Arduino controller.
+3. When predefined thresholds are exceeded:
 
-🔧 Hardware Components:
+   * The **servo actuates a 4-bar linkage** to open the ventilation vent
+   * The **exhaust fan** is switched ON
+   * When temperature exceeds the safe threshold, the Peltier module is activated along with an attached heat sink and cooling fan to ensure effective heat dissipation and       prevent thermal runaway.
+4. A **low-pass RC filter** is used to reduce noise in thermocouple readings, improving temperature measurement stability.
+5. The system operates autonomously without human intervention.
 
-Arduino (microcontroller)
+---
 
-MQ-2 Gas Sensor
+## 📐 Mechanical Design (CAD)
 
-DHT11 Temperature & Humidity Sensor
+* Designed a **4-bar linkage mechanism** to convert servo rotation into smooth vent opening motion
+* Ensured mechanical stability and controlled displacement
+* CAD drawings and mechanism views are provided in the `/CAD` folder
 
-Homemade Cu–Fe Thermocouple
+---
 
-SG90 Servo Motor
+## 📊 Sensor Calibration & Signal Conditioning
 
-12V DC Exhaust Fan
-
-Peltier Cooling Module (TEC-based)
-
-4-Bar Linkage (acrylic-based mechanical design)
-
-Power supply & signal conditioning components
-
-🧠 Working Principle:
-
-Sensors continuously monitor gas concentration, temperature, and humidity.
-
-Sensor signals are processed by the Arduino controller.
-
-When predefined thresholds are exceeded:
-
-The servo actuates a 4-bar linkage to open the ventilation vent.
-
-The exhaust fan is switched ON.
-
-When temperature exceeds the safe threshold, the Peltier module is activated along with an attached heat sink and cooling fan to ensure effective heat dissipation and prevent thermal runaway.
-
-A low-pass RC filter is used to reduce noise in thermocouple readings, improving temperature measurement stability.
-
-The system operates autonomously without human intervention.
-
-📐 Mechanical Design (CAD)
-
-Designed a 4-bar linkage mechanism to convert servo rotation into smooth vent opening motion
-
-Ensured mechanical stability and controlled displacement
-
-CAD drawings and mechanism views are provided in the /CAD folder
-
-📊 Sensor Calibration & Signal Conditioning
-
-Accurate temperature measurement was critical due to the use of a homemade thermocouple.
+Accurate temperature measurement was critical due to the use of a **homemade thermocouple**.
 
 Calibration methodology:
 
-Multiple reference methods (hot water, candle flame, comparative thermistor readings)
+* **Multiple reference methods** (hot water, candle flame, comparative thermistor readings)
+* Identified noise and signal drift issues
+* Implemented an **RC low-pass filter** to suppress high-frequency noise
+* Generated calibration curves and validated sensor behavior
 
-Identified noise and signal drift issues
+All calibration plots and analysis are available in the `/Calibration` folder.
 
-Implemented an RC low-pass filter to suppress high-frequency noise
+> This calibration-driven approach demonstrates real-world engineering practices beyond basic sensor usage.
 
-Generated calibration curves and validated sensor behavior
+---
 
-All calibration plots and analysis are available in the /Calibration folder.
+## 💻 Software & Code
 
-This calibration-driven approach demonstrates real-world engineering practices beyond basic sensor usage.
+* Developed Arduino firmware for:
 
-💻 Software & Code
+  * Sensor data acquisition
+  * Threshold-based decision logic
+  * Servo motor control
+  * Exhaust fan and Peltier activation
+* Modular code structure for easy debugging and testing
 
-Developed Arduino firmware for:
+Source code is available in the `/Code` folder.
 
-Sensor data acquisition
+---
 
-Threshold-based decision logic
+## 📁 Repository Structure
 
-Servo motor control
-
-Exhaust fan and Peltier activation
-
-Modular code structure for easy debugging and testing
-
-Source code is available in the /Code folder.
-
-📁 Repository Structure
-
-├── CAD/            → Mechanical design and linkage drawings
-
-├── Calibration/    → Sensor calibration graphs & filtering analysis
-
+```
 ├── Code/           → Arduino source code
-
+├── CAD/            → Mechanical design and linkage drawings
 ├── Hardware/       → Circuit diagrams & system architecture
-
+├── Calibration/    → Sensor calibration graphs & filtering analysis
 ├── Images/         → Prototype and experimental setup photos
-
 └── README.md
+```
 
-🧪 Prototype & Validation
+---
 
-Fully assembled working prototype
+## 🧪 Prototype & Validation
 
-Verified sensor response under:
+* Fully assembled working prototype
+* Verified sensor response under:
 
-Smoke exposure
+  * Smoke exposure
+  * Temperature rise
+  * Environmental changes
+* Successfully demonstrated automated vent opening and exhaust operation
+* Thermal behavior of the Peltier module was validated by operating it with a heat sink and fan to maintain stable temperature gradients.
 
-Temperature rise
+Images of the prototype are available in the `/Images` folder.
 
-Environmental changes
+---
 
-Successfully demonstrated automated vent opening and exhaust operation
+## 🚀 Key Engineering Skills Demonstrated
 
-Thermal behavior of the Peltier module was validated by operating it with a heat sink and fan to maintain stable temperature gradients.
+* Embedded systems programming (Arduino, C)
+* Sensor integration & calibration
+* Signal conditioning & noise filtering
+* Mechatronics system design
+* Mechanical linkage modeling
+* Safety-critical automation
+* Hardware–software integration
+* Practical thermal management using Peltier module with forced convection cooling
 
-Images of the prototype are available in the /Images folder.
+---
 
-🚀 Key Engineering Skills Demonstrated
+## 🔮 Future Enhancements
 
-Embedded systems programming (Arduino, C)
+* Replace thermocouple with industrial-grade temperature sensor
+* Implement PID-based thermal control
+* Add ESP32 for cloud-based monitoring (IoT)
+* Include gas concentration logging and alerts
 
-Sensor integration & calibration
+---
 
-Signal conditioning & noise filtering
+## 👤 Author
 
-Mechatronics system design
+**Manash Pratim Ghosh**
+GitHub: *(https://github.com/manashpgh)*
 
-Mechanical linkage modeling
+---
 
-Safety-critical automation
-
-Hardware–software integration
-
-Practical thermal management using Peltier module with forced convection cooling
-
-🔮 Future Enhancements
-
-Replace thermocouple with industrial-grade temperature sensor
-
-Implement PID-based thermal control
-
-Add ESP32 for cloud-based monitoring (IoT)
-
-Include gas concentration logging and alerts
-
-👤 Author
-
-Manash Pratim Ghosh
-
-M.Tech — Mechatronics 
-
-GitHub: (https://github.com/manashpgh)
-
-📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
+Add detailed project README
+```
+
+If you want, next I can:
+
+* Review your **final repo live**
+* Help you **explain this project perfectly in interviews**
+* Rewrite this README into a **one-page technical brief** for resume attachments
+
+Just tell me 👍
